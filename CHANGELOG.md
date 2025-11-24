@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2](https://github.com/oxibus/rrdbc/compare/v0.2.1...v0.2.2) - 2025-11-24
+
+### Other
+
+- *(deps)* bump actions/checkout from 5 to 6 in the all-actions-version-updates group ([#19](https://github.com/oxibus/rrdbc/pull/19))
+
 ## [0.2.1](https://github.com/oxibus/rrdbc/compare/v0.2.0...v0.2.1) - 2025-10-08
 
 ### Added

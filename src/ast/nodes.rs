@@ -30,7 +30,7 @@ pub struct Nodes(pub Vec<String>);
 
 impl fmt::Display for Nodes {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "BU_:",)?;
+        write!(f, "BU_:")?;
         for node in &self.0 {
             write!(f, " {node}")?;
         }

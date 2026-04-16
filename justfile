@@ -14,10 +14,10 @@ ci_mode := if env('CI', '') != '' {'1'} else {''}
 binstall_args := if env('CI', '') != '' {'--no-confirm --no-track --disable-telemetry'} else {''}
 export RUSTFLAGS := env('RUSTFLAGS', if ci_mode == '1' {'-D warnings'} else {''})
 export RUSTDOCFLAGS := env('RUSTDOCFLAGS', if ci_mode == '1' {'-D warnings'} else {''})
-export RUST_BACKTRACE := env('RUST_BACKTRACE', if ci_mode == '1' {'1'} else {''})
+export RUST_BACKTRACE := env('RUST_BACKTRACE', if ci_mode == '1' {'1'} else {'0'})
 
 @_default:
-    {{just_executable()}} --list
+    {{quote(just_executable())}} --list
 
 # Run integration tests and save its output as the new expected output
 bless *args:  (cargo-install 'cargo-insta')
@@ -69,8 +69,8 @@ docs *args='--open':
 # Print environment info
 env-info:
     @echo "Running for '{{main_crate}}' crate {{if ci_mode == '1' {'in CI mode'} else {'in dev mode'} }} on {{os()}} / {{arch()}}"
-    @echo "PWD $(pwd)"
-    {{just_executable()}} --version
+    @echo "PWD {{justfile_directory()}}"
+    {{quote(just_executable())}} --version
     rustc --version
     cargo --version
     rustup --version

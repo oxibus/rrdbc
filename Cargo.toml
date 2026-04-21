@@ -1,6 +1,6 @@
 [package]
 name = "rrdbc"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["MDGSF"]
 edition = "2021"
 description = "dbc parser"
